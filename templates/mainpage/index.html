@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <style>
+        * {font-family: Arial;}
+        button {padding: 10px; min-width: 150px; background: #009999;}
+        tr:nth-child(2n) {background: #5CCCCC;}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-table">
+        <form id="sorting"></form>
+        <table>
+            <tr>
+                <th><button form="sorting" type="submit" name="sort_by" value="lastName">Фамилия</button></th>
+                <th><button form="sorting" type="submit" name="sort_by" value="firstName">Имя</button></th>
+                <th><button form="sorting" type="submit" name="sort_by" value="middleName">Отчество</button></th>
+                <th><button form="sorting" type="submit" name="sort_by" value="departament__departamentName">Департамент</button></th>
+            </tr>
+        {% for emloyee in employee_table %}
+            <tr>
+                <td>{{ emloyee.lastName }}</td>
+                <td>{{ emloyee.firstName }}</td>
+                <td>{{ emloyee.middleName }}</td>
+                <td>{{ emloyee.departament }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+
+</body>
+</html>
+
